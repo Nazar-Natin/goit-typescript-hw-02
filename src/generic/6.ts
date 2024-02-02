@@ -5,12 +5,19 @@ type User = {
   password: string;
 };
 
+const defaultUserValues: User = {
+  name: "DefaultName",
+  surname: "DefaultSurname",
+  email: "DefaultEmail",
+  password: "DefaultPassword",
+};
+
 function createOrUpdateUser(initialValues: Partial<User>): User {
   const currentUser: User = {
-    name: initialValues.name || "DefaultName",
-    surname: initialValues.surname || "DefaultSurname",
-    email: initialValues.email || "DefaultEmail",
-    password: initialValues.password || "DefaultPassword",
+    name: initialValues.name || defaultUserValues.name,
+    surname: initialValues.surname || defaultUserValues.surname,
+    email: initialValues.email || defaultUserValues.email,
+    password: initialValues.password || defaultUserValues.password,
   };
 
   return currentUser;

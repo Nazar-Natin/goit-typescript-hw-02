@@ -1,18 +1,16 @@
-interface ComponentProps {
+interface Props {
   title: string;
 }
 
-class Component<T extends ComponentProps> {
+class Component<T> {
   constructor(public props: T) {}
 }
 
-class Page extends Component<ComponentProps> {
+class Page extends Component<Props> {
   pageInfo() {
     console.log(this.props.title);
   }
 }
 
-const page = new Page({ title: "Sample Page" });
+const page = new Page({ title: "Sample Title" });
 page.pageInfo();
-
-export {};
